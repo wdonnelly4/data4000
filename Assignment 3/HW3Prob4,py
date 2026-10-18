@@ -1,0 +1,26 @@
+## Commission function with a default rate
+def calculate_commission(sale_amount, rate=0.10):
+    return sale_amount * rate
+
+
+## Helper for sorting
+def get_commission(pair):
+    return pair[1]
+
+
+sales = {"Alice": 5000, "Bob": 7000, "Carol": 3000}
+
+## Computing each employee's commission
+commissions = {}
+for name, amount in sales.items():
+    commissions[name] = calculate_commission(amount)
+
+## Sorting highest to lowest by commission
+ranked = sorted(commissions.items(), key=get_commission, reverse=True)
+
+## Results of leaderboard
+print("COMMISSION LEADERBOARD")
+rank = 1
+for name, commission in ranked:
+    print(f"{rank}. {name}: ${commission:,.2f}")
+    rank += 1

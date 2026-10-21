@@ -22,33 +22,6 @@ the seed is odd.
 
 ### Example run
 
-    Student key: willem
-    Item name (or DONE to finish): Shirt
-    Unit price: abc
-    That's not a valid number. Try again.
-    Unit price: 20
-    Quantity: 3
-    Added 3 x Shirt at $20.00
-    Item name (or DONE to finish): Hat
-    Unit price: 15
-    Quantity: 2
-    Added 2 x Hat at $15.00
-    Item name (or DONE to finish): DONE
-    Seed: 650
-    Units: 5
-    Subtotal: $90.00
-    Discount: 0%
-    Perk applied: NO
-    Total: $90.00
-
-## Exercise 2: Inventory Spot Check (inventory_spotcheck.py)
-
-Staff enter SKUs and on hand counts until typing DONE. Items below the
-seed-based threshold are flagged for reorder. The program then calls the
-iTunes Search API and reports how many songs came back.
-
-### Example run
-
 - Example run for pos_checkout.py: 
 
 "pos_checkout.py"
@@ -80,8 +53,14 @@ Subtotal: $102.00
 Discount: 10%
 Perk applied: NO
 Total: $91.80
-Unit price: 
 
+## Exercise 2: Inventory Spot Check (inventory_spotcheck.py)
+
+Staff enter SKUs and on hand counts until typing DONE. Items below the
+seed-based threshold are flagged for reorder. The program then calls the
+iTunes Search API and reports how many songs came back.
+
+### Example run
 
 - Example run for inventory_spotcheck.py
 

@@ -1,5 +1,4 @@
-# app.py
-# Campus Store order entry: a Streamlit web app connected to Supabase.
+# Campus Store order entry: a Streamlit web app connected to Supabase
 
 import hmac
 from datetime import date
@@ -60,7 +59,7 @@ def load_data():
         st.error("Could not load data from the database. Check the connection settings and try Refresh Data.")
         st.stop()
 
-    # Dictionaries keyed by ID make lookups simple
+    # Dictionaries keyed by ID to make lookups simple
     customers = {row["customer_id"]: row for row in customers}
     products = {row["product_id"]: row for row in products}
     return customers, products, orders
@@ -146,7 +145,7 @@ def show_order_form(customers, products):
 
     unit_price = float(products[product_id]["price"])
 
-    # Save exactly what the user is looking at; the submit step inserts these values
+    # Save exactly what the user is looking at
     st.session_state.reviewed = {
         "customer_id": customer_id,
         "product_id": product_id,
@@ -208,7 +207,7 @@ def submit_order():
                    "Review the updated order and confirm again. No order was saved.")
         return
 
-    # Use up the confirmation before inserting, so a second click can't save a duplicate
+    # Use up the confirmation before inserting
     st.session_state.confirm = False
 
     order = {
@@ -232,7 +231,7 @@ def submit_order():
 
     db.get_orders.clear()  # order history must show the new order
 
-    # Verify with a brand-new query (never insert again if this fails)
+    # Verify with a brand-new query
     try:
         saved = db.get_order(new_order_id)
     except Exception:
